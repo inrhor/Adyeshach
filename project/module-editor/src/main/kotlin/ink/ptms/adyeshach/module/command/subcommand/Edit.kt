@@ -35,7 +35,7 @@ val editSubCommand = subCommand {
     dynamic("id") {
         suggestEntityList()
         dynamic("action") {
-            suggestUncheck { listOf("main", "traits", "public-meta", "private-meta", "move") }
+            suggestUncheck { listOf("main", "traits", "public-meta", "private-meta", "move", "controller") }
             execute<CommandSender> { sender, ctx, args ->
                 val npcList = Command.finder.getEntitiesFromIdOrUniqueId(ctx["id"], sender as? Player)
                 if (npcList.isEmpty()) {
